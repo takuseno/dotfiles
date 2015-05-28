@@ -7,7 +7,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-fugitive'
 
 NeoBundleCheck
 call neobundle#end()
@@ -16,7 +19,7 @@ call neobundle#end()
 let g:unite_enable_start_insert=1
 noremap <C-P> :Unite buffer<CR>
 noremap <C-N> :Unite -buffer-name=file file<CR>
-noremap <C-Z> :Unite file_mru
+noremap <C-Z> :Unite file_mru<CR>
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 
 filetype plugin indent on
