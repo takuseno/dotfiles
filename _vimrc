@@ -29,7 +29,6 @@ set title
 set list
 set listchars=tab:>_,trail:-,extends:>,precedes:<,nbsp:%
 set autoindent
-set smartindent
 set tabstop=4
 set encoding=utf-8
 
