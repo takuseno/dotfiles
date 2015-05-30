@@ -22,8 +22,6 @@ noremap <C-N> :Unite -buffer-name=file file<CR>
 noremap <C-Z> :Unite file_mru<CR>
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 
-filetype plugin indent on
-
 set nu
 syntax on
 colorscheme molokai
