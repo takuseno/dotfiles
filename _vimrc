@@ -11,6 +11,7 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'kchmck/vim-coffee-script'
 
 NeoBundleCheck
 call neobundle#end()
@@ -25,6 +26,7 @@ noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 set nu
 syntax on
 colorscheme molokai
+set t_Co=256
 set title
 set list
 set listchars=tab:>_,trail:-,extends:>,precedes:<,nbsp:%
@@ -37,3 +39,5 @@ inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
+
+filetype plugin indent on
