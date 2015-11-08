@@ -12,6 +12,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'mtscout6/vim-cjsx'
 
 NeoBundleCheck
 call neobundle#end()
@@ -33,6 +34,7 @@ set listchars=tab:>_,trail:-,extends:>,precedes:<,nbsp:%
 set autoindent
 set tabstop=4
 set encoding=utf-8
+set incsearch
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
