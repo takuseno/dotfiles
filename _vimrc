@@ -11,8 +11,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mtscout6/vim-cjsx'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'leafgarland/typescript-vim'
 
 NeoBundleCheck
 call neobundle#end()
@@ -41,5 +41,3 @@ inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
-
-filetype plugin indent on
