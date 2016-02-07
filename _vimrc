@@ -14,6 +14,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'kchmck/vim-coffee-script'
 
 NeoBundleCheck
 call neobundle#end()
