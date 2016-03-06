@@ -16,6 +16,16 @@ NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'Shougo/vimproc.vim', {
+	\ 'build' : {
+		\ 'windows' : 'tools\\update-dll-mingw',
+		\ 'cygwin' : 'make -f make_cygwin.mak',
+		\ 'mac' : 'make',
+		\ 'linux' : 'make',
+		\ 'unix' : 'gmake',
+	\ }
+\ }
 
 NeoBundleCheck
 call neobundle#end()
