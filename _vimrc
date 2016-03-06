@@ -50,6 +50,7 @@ set autoindent
 set tabstop=4
 set encoding=utf-8
 set incsearch
+set cursorline
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
