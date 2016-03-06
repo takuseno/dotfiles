@@ -26,6 +26,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 		\ 'unix' : 'gmake',
 	\ }
 \ }
+NeoBundle 'rhysd/github-complete.vim'
 
 NeoBundleCheck
 call neobundle#end()
@@ -83,9 +84,11 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
+" autocmds
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType markdown,gitcommit setlocal omnifunc=github_complete#complete
 
