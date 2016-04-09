@@ -28,6 +28,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 NeoBundle 'rhysd/github-complete.vim'
 NeoBundle 'Quramy/tsuquyomi'
+NeoBundle 'othree/yajs.vim'
+NeoBundle 'scrooloose/syntastic'
 
 NeoBundleCheck
 call neobundle#end()
@@ -60,7 +62,7 @@ inoremap ' ''<LEFT>
 
 " autocmds
 autocmd BufNewFile,BufRead *.{ts,tsx} set filetype=typescript
-
+autocmd BufRead,BufNewFile *.es6 set filetype=javascript
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -105,4 +107,14 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_wq = 1
+let g:syntastic_javascript_checkers = ['standard']
 
