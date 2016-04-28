@@ -30,6 +30,7 @@ NeoBundle 'rhysd/github-complete.vim'
 NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'artur-shaik/vim-javacomplete2'
 
 NeoBundleCheck
 call neobundle#end()
@@ -52,7 +53,6 @@ set autoindent
 set tabstop=4
 set encoding=utf-8
 set incsearch
-set cursorline
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
@@ -70,6 +70,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType markdown,gitcommit setlocal omnifunc=github_complete#complete
 autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 filetype plugin on
 
@@ -108,13 +109,16 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " syntastic settings
+set statusline+=%F%m%r%h%w\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set laststatus=2
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_wq = 1
 let g:syntastic_javascript_checkers = ['standard']
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
