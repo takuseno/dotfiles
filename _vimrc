@@ -29,8 +29,9 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'rhysd/github-complete.vim'
 NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'othree/yajs.vim'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'artur-shaik/vim-javacomplete2'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'itchyny/lightline.vim'
 
 NeoBundleCheck
 call neobundle#end()
@@ -53,6 +54,7 @@ set autoindent
 set tabstop=4
 set encoding=utf-8
 set incsearch
+set laststatus=2
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
@@ -108,17 +110,12 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
-" syntastic settings
-set statusline+=%F%m%r%h%w\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set laststatus=2
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_wq = 1
-let g:syntastic_javascript_checkers = ['standard']
 let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
 
+" Go settings
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
