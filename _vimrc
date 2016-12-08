@@ -32,6 +32,8 @@ NeoBundle 'othree/yajs.vim'
 NeoBundle 'artur-shaik/vim-javacomplete2'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'plasticboy/vim-markdown'
 
 NeoBundleCheck
 call neobundle#end()
@@ -111,6 +113,8 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 let g:tsuquyomi_disable_quickfix = 1
+
+let g:vim_markdown_folding_disabled = 1
 
 " Go settings
 let g:go_highlight_functions = 1
