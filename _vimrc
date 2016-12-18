@@ -34,6 +34,7 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'Shougo/vimshell.vim'
 
 NeoBundleCheck
 call neobundle#end()
