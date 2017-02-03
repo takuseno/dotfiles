@@ -35,6 +35,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'Shougo/vimshell.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 NeoBundleCheck
 call neobundle#end()
