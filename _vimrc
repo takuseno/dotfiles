@@ -36,6 +36,9 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'tacroe/unite-mark'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 
 NeoBundleCheck
 call neobundle#end()
@@ -45,7 +48,12 @@ noremap <C-P> :Unite buffer<CR>
 noremap <C-N> :Unite -buffer-name=file file<CR>
 noremap <C-Z> :Unite file_mru<CR>
 noremap <C-F> :Unite file<CR>
+noremap <C-M> :Unite mark<CR>
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+
+" Git
+noremap <C-D> :Gdiff<CR>
+noremap <C-B> :Gblame<CR>
 
 set nu
 syntax on
@@ -118,6 +126,9 @@ let g:tsuquyomi_disable_quickfix = 1
 
 let g:vim_markdown_folding_disabled = 1
 
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 30
+
 " Go settings
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -125,3 +136,6 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+" Signature settings
+let g:SignatureMarkTextHLDynamic = 1
