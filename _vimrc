@@ -36,7 +36,6 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 
@@ -50,10 +49,17 @@ noremap <C-Z> :Unite file_mru<CR>
 noremap <C-F> :Unite file<CR>
 noremap <C-M> :Unite mark<CR>
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+nnoremap <C-G> :Unite grep<CR>
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 " Git
 noremap <C-D> :Gdiff<CR>
 noremap <C-B> :Gblame<CR>
+noremap <C-S> :Gstatus<CR>
 
 set nu
 syntax on
@@ -67,6 +73,7 @@ set tabstop=4
 set encoding=utf-8
 set incsearch
 set laststatus=2
+set hlsearch
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
@@ -136,6 +143,3 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-
-" Signature settings
-let g:SignatureMarkTextHLDynamic = 1
