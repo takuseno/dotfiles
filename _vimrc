@@ -80,6 +80,7 @@ inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
+inoremap <C-c> <Esc>
 
 " autocmds
 autocmd BufNewFile,BufRead *.{ts,tsx} set filetype=typescript
