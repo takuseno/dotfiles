@@ -38,6 +38,9 @@ NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 't9md/vim-quickhl'
+NeoBundle 'digitaltoad/vim-pug'
+NeoBundle 'freeo/vim-kalisi'
 
 NeoBundleCheck
 call neobundle#end()
@@ -63,7 +66,8 @@ noremap <C-S> :Gstatus<CR>
 
 set nu
 syntax on
-colorscheme molokai
+colorscheme kalisi
+set background=dark
 set t_Co=256
 set title
 set list
@@ -88,11 +92,11 @@ autocmd BufRead,BufNewFile *.es6 set filetype=javascript
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType markdown,gitcommit setlocal omnifunc=github_complete#complete
 autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 filetype plugin on
 
@@ -129,6 +133,11 @@ endfunction
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
 
 let g:tsuquyomi_disable_quickfix = 1
 
