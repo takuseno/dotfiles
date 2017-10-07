@@ -41,6 +41,7 @@ NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 't9md/vim-quickhl'
 NeoBundle 'digitaltoad/vim-pug'
 NeoBundle 'freeo/vim-kalisi'
+NeoBundle 'geoffharcourt/one-dark.vim'
 
 NeoBundleCheck
 call neobundle#end()
@@ -66,7 +67,7 @@ noremap <C-S> :Gstatus<CR>
 
 set nu
 syntax on
-colorscheme kalisi
+colorscheme onedark
 set background=dark
 set t_Co=256
 set title
