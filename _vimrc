@@ -80,6 +80,8 @@ set incsearch
 set laststatus=2
 set hlsearch
 set completeopt=menuone
+set backspace=indent,eol,start
+execute "set colorcolumn=" . join(range(81, 9999), ',')
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
