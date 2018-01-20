@@ -82,6 +82,7 @@ set hlsearch
 set completeopt=menuone
 set backspace=indent,eol,start
 execute "set colorcolumn=" . join(range(81, 9999), ',')
+highlight ColorColumn ctermbg=52 guibg=#2c2d27
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
