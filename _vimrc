@@ -82,12 +82,9 @@ set laststatus=2
 set hlsearch
 set completeopt=menuone
 set backspace=indent,eol,start
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 execute "set colorcolumn=" . join(range(81, 9999), ',')
-highlight ColorColumn ctermbg=88
+highlight ColorColumn ctermbg=52 guibg=#2c2d27
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>

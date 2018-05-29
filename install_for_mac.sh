@@ -3,7 +3,7 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew install curl wget tmux tig tmux pyenv pyenv-virtualenv
-brew instsall macvim --with-lua
+brew install vim --with-lua
 
 echo "alias ls='ls -G'" >> ~/.bashrc
 
