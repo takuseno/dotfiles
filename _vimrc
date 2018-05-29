@@ -70,6 +70,7 @@ noremap <C-S> :Gstatus<CR>
 set nu
 syntax on
 colorscheme jellybeans
+set t_Co=256
 set background=dark
 set title
 set list
