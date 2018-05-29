@@ -26,7 +26,6 @@ NeoBundle 'Shougo/vimproc.vim', {
 		\ 'unix' : 'gmake',
 	\ }
 \ }
-NeoBundle 'rhysd/github-complete.vim'
 NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'artur-shaik/vim-javacomplete2'
@@ -35,13 +34,16 @@ NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 't9md/vim-quickhl'
 NeoBundle 'digitaltoad/vim-pug'
-NeoBundle 'freeo/vim-kalisi'
 NeoBundle 'geoffharcourt/one-dark.vim'
+NeoBundle 'simeji/winresizer'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'hdima/python-syntax'
 
 NeoBundleCheck
 call neobundle#end()
@@ -67,9 +69,8 @@ noremap <C-S> :Gstatus<CR>
 
 set nu
 syntax on
-colorscheme onedark
+colorscheme jellybeans
 set background=dark
-set t_Co=256
 set title
 set list
 set listchars=tab:>_,trail:-,extends:>,precedes:<,nbsp:%
@@ -81,7 +82,12 @@ set laststatus=2
 set hlsearch
 set completeopt=menuone
 set backspace=indent,eol,start
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 execute "set colorcolumn=" . join(range(81, 9999), ',')
+highlight ColorColumn ctermbg=88
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
@@ -97,7 +103,6 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType markdown,gitcommit setlocal omnifunc=github_complete#complete
 autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
@@ -143,12 +148,11 @@ xmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
 
+let python_highlight_all = 1
+
 let g:tsuquyomi_disable_quickfix = 1
 
 let g:vim_markdown_folding_disabled = 1
-
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_color_change_percent = 30
 
 " Go settings
 let g:go_highlight_functions = 1
