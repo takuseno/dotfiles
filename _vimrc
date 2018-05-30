@@ -44,6 +44,7 @@ NeoBundle 'simeji/winresizer'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'hdima/python-syntax'
+NeoBundle 'w0rp/ale'
 
 NeoBundleCheck
 call neobundle#end()
