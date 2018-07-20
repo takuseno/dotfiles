@@ -46,6 +46,7 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'hdima/python-syntax'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'severin-lemaignan/vim-minimap'
+NeoBundle 'w0rp/ale'
 
 NeoBundleCheck
 call neobundle#end()
@@ -136,6 +137,10 @@ endif
 let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
 
 let g:tex_conceal=''
+
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:airline#extensions#ale#enabled = 1
 
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
