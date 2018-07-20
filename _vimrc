@@ -44,6 +44,8 @@ NeoBundle 'simeji/winresizer'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'hdima/python-syntax'
+NeoBundle 'glidenote/memolist.vim'
+NeoBundle 'severin-lemaignan/vim-minimap'
 
 NeoBundleCheck
 call neobundle#end()
@@ -83,6 +85,8 @@ set laststatus=2
 set hlsearch
 set completeopt=menuone
 set backspace=indent,eol,start
+set cursorline
+hi clear CursorLine
 
 execute "set colorcolumn=" . join(range(81, 9999), ',')
 highlight ColorColumn ctermbg=52 guibg=#2c2d27
@@ -153,6 +157,8 @@ let python_highlight_all = 1
 let g:tsuquyomi_disable_quickfix = 1
 
 let g:vim_markdown_folding_disabled = 1
+
+let g:memolist_memo_suffix = "md"
 
 " Go settings
 let g:go_highlight_functions = 1
