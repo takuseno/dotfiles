@@ -47,6 +47,7 @@ NeoBundle 'hdima/python-syntax'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'severin-lemaignan/vim-minimap'
 NeoBundle 'w0rp/ale'
+NeoBundle 'itchyny/vim-cursorword'
 
 NeoBundleCheck
 call neobundle#end()
