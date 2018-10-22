@@ -48,6 +48,7 @@ NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'severin-lemaignan/vim-minimap'
 NeoBundle 'w0rp/ale'
 NeoBundle 'itchyny/vim-cursorword'
+NeoBundle 'elzr/vim-json'
 
 NeoBundleCheck
 call neobundle#end()
@@ -138,6 +139,7 @@ endif
 let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
 
 let g:tex_conceal=''
+let g:vim_json_syntax_conceal = 0
 
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
