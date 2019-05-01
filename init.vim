@@ -7,11 +7,11 @@ if dein#load_state('~/.cache/dein')
 	call dein#begin('~/.cache/dein')
 
 	call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+	call dein#add('tpope/vim-fugitive')
 	call dein#add('Shougo/deoplete.nvim')
 	call dein#add('Shougo/denite.nvim')
 	call dein#add('scrooloose/nerdtree')
 	call dein#add('airblade/vim-gitgutter')
-	call dein#add('tpope/vim-fugitive')
 	call dein#add('editorconfig/editorconfig-vim')
 	call dein#add('leafgarland/typescript-vim')
 	call dein#add('derekwyatt/vim-scala')
@@ -29,7 +29,6 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('t9md/vim-quickhl')
 	call dein#add('digitaltoad/vim-pug')
 	call dein#add('simeji/winresizer')
-	call dein#add('ctrlpvim/ctrlp.vim')
 	call dein#add('nanotech/jellybeans.vim')
 	call dein#add('hdima/python-syntax')
 	call dein#add('glidenote/memolist.vim')
@@ -48,7 +47,7 @@ endif
 
 noremap <C-P> :Denite buffer<CR>
 noremap <C-N> :Denite -buffer-name=file file<CR>
-noremap <C-F> :Denite file_rec<CR>
+noremap <C-F> :Denite file/rec<CR>
 noremap <C-M> :Denite mark<CR>
 noremap <C-G> :Denite grep<CR>
 call denite#custom#var('grep', 'command', ['ag'])
