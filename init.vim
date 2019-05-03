@@ -45,28 +45,7 @@ if dein#check_install()
 	call dein#install()
 endif
 
-noremap <C-P> :Denite buffer<CR>
-noremap <C-N> :Denite -buffer-name=file file<CR>
-noremap <C-F> :Denite file/rec<CR>
-noremap <C-M> :Denite mark<CR>
-noremap <C-G> :Denite grep<CR>
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_ops', ['--follow', '--no-group', '--no-color'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-
-call denite#custom#map('normal', 'j', '<denite:nop>', 'noremap')
-call denite#custom#map('normal', 'k', '<denite:nop>', 'noremap')
-call denite#custom#map('normal', '<C-N>', '<denite:move_to_next_line>')
-call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>')
-call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>')
-call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>')
-
-" Git
-noremap <C-D> :Gdiff<CR>
-noremap <C-B> :Gblame<CR>
-noremap <C-S> :Gstatus<CR>
-
+" base settings
 set nu
 syntax on
 colorscheme jellybeans
@@ -87,15 +66,40 @@ set cursorline
 set conceallevel=0
 hi clear CursorLine
 
+" fill columns after 80 with red
 execute "set colorcolumn=" . join(range(81, 9999), ',')
 highlight ColorColumn ctermbg=52 guibg=#2c2d27
 
+" close brackets and quotes
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
+
+" assign esc to Ctrl-C
 inoremap <C-c> <Esc>
+
+" denite settings
+noremap <C-P> :Denite file/rec<CR>
+noremap <C-F> :Denite file<CR>
+noremap <C-M> :Denite mark<CR>
+noremap <C-G> :Denite grep<CR>
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'default_ops', ['--follow', '--no-group', '--no-color'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#map('normal', 'j', '<denite:nop>', 'noremap')
+call denite#custom#map('normal', 'k', '<denite:nop>', 'noremap')
+call denite#custom#map('normal', '<C-N>', '<denite:move_to_next_line>')
+call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>')
+call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>')
+call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>')
+
+" Git
+noremap <C-D> :Gdiff<CR>
+noremap <C-B> :Gblame<CR>
+noremap <C-S> :Gstatus<CR>
 
 " autocmds
 autocmd BufNewFile,BufRead *.{ts,tsx} set filetype=typescript
@@ -107,10 +111,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-
 filetype plugin on
 
-" neocomplete settings
+" deoplete settings
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#syntax#min_key_word_length = 3
@@ -118,10 +121,12 @@ let g:deoplete#enable_cursor_hold_i = 1
 let g:deoplete#cursor_hold_i_time = 300
 let g:deoplete#lock_buffer_name_pattern = '\*ku\*'
 
+" ale setting
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:airline#extensions#ale#enabled = 1
 
+" mark setting
 nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
@@ -129,13 +134,16 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 
 let python_highlight_all = 1
 
+" typescript
 let g:tsuquyomi_disable_quickfix = 1
 
+" disable conceals
 let g:vim_markdown_folding_disabled = 1
 let g:tex_conceal=''
 let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
 
+" memo setting
 let g:memolist_memo_suffix = "md"
 
 " Go settings
