@@ -36,6 +36,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('w0rp/ale')
 	call dein#add('itchyny/vim-cursorword')
 	call dein#add('elzr/vim-json')
+	call dein#add('lervag/vimtex')
 
 	call dein#end()
 	call dein#save_state()
@@ -44,6 +45,18 @@ endif
 if dein#check_install()
 	call dein#install()
 endif
+
+" autocmds
+autocmd BufNewFile,BufRead *.{ts,tsx} set filetype=typescript
+autocmd BufRead,BufNewFile *.es6 set filetype=javascript
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+filetype plugin on
 
 " base settings
 set nu
@@ -100,18 +113,6 @@ call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>')
 noremap <C-D> :Gdiff<CR>
 noremap <C-B> :Gblame<CR>
 noremap <C-S> :Gstatus<CR>
-
-" autocmds
-autocmd BufNewFile,BufRead *.{ts,tsx} set filetype=typescript
-autocmd BufRead,BufNewFile *.es6 set filetype=javascript
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-filetype plugin on
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
