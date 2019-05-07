@@ -37,6 +37,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('itchyny/vim-cursorword')
 	call dein#add('elzr/vim-json')
 	call dein#add('lervag/vimtex')
+	call dein#add('davidhalter/jedi-vim')
 
 	call dein#end()
 	call dein#save_state()
@@ -77,6 +78,7 @@ set completeopt=menuone
 set backspace=indent,eol,start
 set cursorline
 set conceallevel=0
+set inccommand=split
 hi clear CursorLine
 
 " fill columns after 80 with red
