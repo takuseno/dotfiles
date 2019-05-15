@@ -37,7 +37,6 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('itchyny/vim-cursorword')
 	call dein#add('elzr/vim-json')
 	call dein#add('lervag/vimtex')
-	call dein#add('davidhalter/jedi-vim')
 
 	call dein#end()
 	call dein#save_state()
