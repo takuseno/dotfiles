@@ -37,7 +37,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('itchyny/vim-cursorword')
 	call dein#add('elzr/vim-json')
 	call dein#add('lervag/vimtex')
-	call dein#add('davidhalter/jedi-vim')
+	call dein#add('posva/vim-vue')
 
 	call dein#end()
 	call dein#save_state()
@@ -57,6 +57,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType vue syntax sync fromstart
 filetype plugin on
 
 " base settings
@@ -139,6 +140,9 @@ let python_highlight_all = 1
 
 " typescript
 let g:tsuquyomi_disable_quickfix = 1
+
+" Vue
+let g:vue_disable_pre_processors=1
 
 " disable conceals
 let g:vim_markdown_folding_disabled = 1
