@@ -58,6 +58,7 @@ autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType vue syntax sync fromstart
+autocmd FileType markdown let g:indentLine_enabled=0
 filetype plugin on
 
 " base settings
@@ -98,7 +99,7 @@ inoremap <C-c> <Esc>
 
 " denite settings
 noremap <C-P> :Denite file/rec<CR>
-noremap <C-F> :Denite file<CR>
+noremap <C-L> :Denite file<CR>
 noremap <C-M> :Denite mark<CR>
 noremap <C-G> :Denite grep<CR>
 call denite#custom#var('grep', 'command', ['ag'])
