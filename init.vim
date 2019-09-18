@@ -113,6 +113,10 @@ call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>')
 call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>')
 call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>')
 
+" tab
+noremap <C-T> :tabnew<CR>
+noremap <C-N> :tabNext<CR>
+
 " Git
 noremap <C-D> :Gdiff<CR>
 noremap <C-B> :Gblame<CR>

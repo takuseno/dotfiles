@@ -55,7 +55,6 @@ call neobundle#end()
 
 let g:unite_enable_start_insert=1
 noremap <C-P> :Unite buffer<CR>
-noremap <C-N> :Unite -buffer-name=file file<CR>
 noremap <C-L> :Unite file<CR>
 noremap <C-M> :Unite mark<CR>
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
@@ -65,6 +64,10 @@ if executable('ag')
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
 endif
+
+" tab
+noremap <C-T> :tabnew<CR>
+noremap <C-N> :tabNext<CR>
 
 " Git
 noremap <C-D> :Gdiff<CR>
