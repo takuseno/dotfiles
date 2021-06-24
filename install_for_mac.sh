@@ -2,7 +2,7 @@
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install curl wget tmux tig tmux pyenv pyenv-virtualenv
+brew install curl wget tmux tig tmux pyenv pyenv-virtualenv the_silver_searcher
 brew install vim --with-lua
 brew install neovim
 
