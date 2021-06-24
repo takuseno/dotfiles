@@ -4,6 +4,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 brew install curl wget tmux tig tmux pyenv pyenv-virtualenv
 brew install vim --with-lua
+brew install neovim
 
 echo "alias ls='ls -G'" >> ~/.bashrc
 
