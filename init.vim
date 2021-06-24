@@ -21,6 +21,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('artur-shaik/vim-javacomplete2')
 	call dein#add('fatih/vim-go')
 	call dein#add('vim-airline/vim-airline')
+	call dein#add('vim-airline/vim-airline-themes')
 	call dein#add('godlygeek/tabular')
 	call dein#add('plasticboy/vim-markdown')
 	call dein#add('Yggdroot/indentLine')
@@ -38,6 +39,10 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('elzr/vim-json')
 	call dein#add('lervag/vimtex')
 	call dein#add('posva/vim-vue')
+	call dein#add('pangloss/vim-javascript')
+	call dein#add('MaxMEllon/vim-jsx-pretty')
+	call dein#add('tshirtman/vim-cython')
+	call dein#add('davidhalter/jedi-vim')
 
 	call dein#end()
 	call dein#save_state()
@@ -124,7 +129,7 @@ noremap <C-S> :Gstatus<CR>
 
 " deoplete settings
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+call deoplete#custom#option('smart_case', v:true)
 let g:deoplete#sources#syntax#min_key_word_length = 3
 let g:deoplete#enable_cursor_hold_i = 1
 let g:deoplete#cursor_hold_i_time = 300
@@ -133,7 +138,14 @@ let g:deoplete#lock_buffer_name_pattern = '\*ku\*'
 " ale setting
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+
+" airline setting
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'jellybeans'
+
+" NERDTree setting
+nmap <C-f> :NERDTree<CR>
 
 " mark setting
 nmap <Space>m <Plug>(quickhl-manual-this)
