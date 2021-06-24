@@ -31,6 +31,7 @@ NeoBundle 'othree/yajs.vim'
 NeoBundle 'artur-shaik/vim-javacomplete2'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'Shougo/vimshell.vim'
@@ -49,6 +50,12 @@ NeoBundle 'severin-lemaignan/vim-minimap'
 NeoBundle 'w0rp/ale'
 NeoBundle 'itchyny/vim-cursorword'
 NeoBundle 'elzr/vim-json'
+NeoBundle 'lervag/vimtex'
+NeoBundle 'posva/vim-vue'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'MaxMEllon/vim-jsx-pretty'
+NeoBundle 'tshirtman/vim-cython'
+NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundleCheck
 call neobundle#end()
@@ -144,9 +151,17 @@ let g:tex_conceal=''
 let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
 
+" ale setting
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+
+" airline setting
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'jellybeans'
+
+" NERDTree setting
+nmap <C-f> :NERDTree<CR>
 
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
