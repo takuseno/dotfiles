@@ -103,20 +103,26 @@ inoremap ' ''<LEFT>
 inoremap <C-c> <Esc>
 
 " denite settings
-noremap <C-P> :Denite file/rec<CR>
+noremap <C-P> :<C-u>Denite file/rec<CR>
 noremap <C-L> :Denite file<CR>
 noremap <C-M> :Denite mark<CR>
-noremap <C-G> :Denite grep<CR>
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_ops', ['--follow', '--no-group', '--no-color'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
+noremap <C-G> :<C-u>Denite grep<CR>
+call denite#custom#var('file/rec', 'command',
+	\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('grep', {
+	\ 'command': ['ag'],
+	\ 'default_opts': ['-i', '--vimgrep'],
+	\ 'recursive_opts': [],
+	\ 'pattern_opt': [],
+	\ 'separator': ['--'],
+	\ 'final_opts': [],
+	\ })
 call denite#custom#map('normal', 'j', '<denite:nop>', 'noremap')
 call denite#custom#map('normal', 'k', '<denite:nop>', 'noremap')
-call denite#custom#map('normal', '<C-N>', '<denite:move_to_next_line>')
-call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>')
-call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>')
-call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>')
+call denite#custom#map('normal', '<C-N>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>', 'noremap')
 
 " tab
 noremap <C-T> :tabnew<CR>
