@@ -4,52 +4,46 @@ endif
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.cache/dein')
-	call dein#begin('~/.cache/dein')
+    call dein#begin('~/.cache/dein')
 
-	call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-	call dein#add('tpope/vim-fugitive')
-	call dein#add('Shougo/deoplete.nvim')
-	call dein#add('Shougo/denite.nvim')
-	call dein#add('scrooloose/nerdtree')
-	call dein#add('airblade/vim-gitgutter')
-	call dein#add('editorconfig/editorconfig-vim')
-	call dein#add('leafgarland/typescript-vim')
-	call dein#add('derekwyatt/vim-scala')
-	call dein#add('kchmck/vim-coffee-script')
-	call dein#add('Quramy/tsuquyomi')
-	call dein#add('othree/yajs.vim')
-	call dein#add('artur-shaik/vim-javacomplete2')
-	call dein#add('fatih/vim-go')
-	call dein#add('vim-airline/vim-airline')
-	call dein#add('vim-airline/vim-airline-themes')
-	call dein#add('godlygeek/tabular')
-	call dein#add('plasticboy/vim-markdown')
-	call dein#add('Yggdroot/indentLine')
-	call dein#add('tacroe/unite-mark')
-	call dein#add('Xuyuanp/nerdtree-git-plugin')
-	call dein#add('t9md/vim-quickhl')
-	call dein#add('digitaltoad/vim-pug')
-	call dein#add('simeji/winresizer')
-	call dein#add('nanotech/jellybeans.vim')
-	call dein#add('hdima/python-syntax')
-	call dein#add('glidenote/memolist.vim')
-	call dein#add('severin-lemaignan/vim-minimap')
-	call dein#add('w0rp/ale')
-	call dein#add('itchyny/vim-cursorword')
-	call dein#add('elzr/vim-json')
-	call dein#add('lervag/vimtex')
-	call dein#add('posva/vim-vue')
-	call dein#add('pangloss/vim-javascript')
-	call dein#add('MaxMEllon/vim-jsx-pretty')
-	call dein#add('tshirtman/vim-cython')
-	call dein#add('davidhalter/jedi-vim')
+    call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+    call dein#add('tpope/vim-fugitive')
+    call dein#add('Shougo/denite.nvim')
+    call dein#add('scrooloose/nerdtree')
+    call dein#add('airblade/vim-gitgutter')
+    call dein#add('editorconfig/editorconfig-vim')
+    call dein#add('leafgarland/typescript-vim')
+    call dein#add('derekwyatt/vim-scala')
+    call dein#add('kchmck/vim-coffee-script')
+    call dein#add('othree/yajs.vim')
+    call dein#add('fatih/vim-go')
+    call dein#add('vim-airline/vim-airline')
+    call dein#add('vim-airline/vim-airline-themes')
+    call dein#add('godlygeek/tabular')
+    call dein#add('plasticboy/vim-markdown')
+    call dein#add('Yggdroot/indentLine')
+    call dein#add('tacroe/unite-mark')
+    call dein#add('Xuyuanp/nerdtree-git-plugin')
+    call dein#add('t9md/vim-quickhl')
+    call dein#add('digitaltoad/vim-pug')
+    call dein#add('simeji/winresizer')
+    call dein#add('nanotech/jellybeans.vim')
+    call dein#add('hdima/python-syntax')
+    call dein#add('glidenote/memolist.vim')
+    call dein#add('itchyny/vim-cursorword')
+    call dein#add('elzr/vim-json')
+    call dein#add('posva/vim-vue')
+    call dein#add('pangloss/vim-javascript')
+    call dein#add('MaxMEllon/vim-jsx-pretty')
+    call dein#add('tshirtman/vim-cython')
+    call dein#add('neoclide/coc.nvim')
 
-	call dein#end()
-	call dein#save_state()
+    call dein#end()
+    call dein#save_state()
 endif
 
 if dein#check_install()
-	call dein#install()
+    call dein#install()
 endif
 
 " autocmds
@@ -59,7 +53,6 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType typescript setlocal omnifunc=tsuquyomi#complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType vue syntax sync fromstart
@@ -77,6 +70,8 @@ set list
 set listchars=tab:>_,trail:-,extends:>,precedes:<,nbsp:%
 set autoindent
 set tabstop=4
+set expandtab
+set shiftwidth=4
 set encoding=utf-8
 set incsearch
 set laststatus=2
@@ -86,10 +81,12 @@ set backspace=indent,eol,start
 set cursorline
 set conceallevel=0
 set inccommand=split
+set nobackup
+set nowritebackup
 hi clear CursorLine
 
 " fill columns after 80 with red
-execute "set colorcolumn=" . join(range(81, 9999), ',')
+execute "set colorcolumn=" . join(range(81, 81), ',')
 highlight ColorColumn ctermbg=52 guibg=#2c2d27
 
 " close brackets and quotes
@@ -104,48 +101,55 @@ inoremap <C-c> <Esc>
 
 " denite settings
 noremap <C-P> :<C-u>Denite file/rec<CR>
-noremap <C-L> :Denite file<CR>
-noremap <C-M> :Denite mark<CR>
 noremap <C-G> :<C-u>Denite grep<CR>
 call denite#custom#var('file/rec', 'command',
-	\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+    \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 call denite#custom#var('grep', {
-	\ 'command': ['ag'],
-	\ 'default_opts': ['-i', '--vimgrep'],
-	\ 'recursive_opts': [],
-	\ 'pattern_opt': [],
-	\ 'separator': ['--'],
-	\ 'final_opts': [],
-	\ })
-call denite#custom#map('normal', 'j', '<denite:nop>', 'noremap')
-call denite#custom#map('normal', 'k', '<denite:nop>', 'noremap')
-call denite#custom#map('normal', '<C-N>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>', 'noremap')
+    \ 'command': ['ag'],
+    \ 'default_opts': ['-i', '--vimgrep'],
+    \ 'recursive_opts': [],
+    \ 'pattern_opt': [],
+    \ 'separator': ['--'],
+    \ 'final_opts': [],
+    \ })
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> o
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> s
-  \ denite#do_map('do_action', 'split')
-  nnoremap <silent><buffer><expr> v
-  \ denite#do_map('do_action', 'vsplit')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> <Esc>
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space>
-  \ denite#do_map('toggle_select').'j'
+    nnoremap <silent><buffer><expr> <CR>
+    \ denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> o
+    \ denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> s
+    \ denite#do_map('do_action', 'split')
+    nnoremap <silent><buffer><expr> v
+    \ denite#do_map('do_action', 'vsplit')
+    nnoremap <silent><buffer><expr> d
+    \ denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> p
+    \ denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> <Esc>
+    \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> q
+    \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i
+    \ denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <Space>
+    \ denite#do_map('toggle_select').'j'
 endfunction
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+    imap <silent><buffer><C-o> <Plug>(denite_filter_quit)
+endfunction
+let s:denite_win_width_percent = 0.85
+let s:denite_win_height_percent = 0.7
+call denite#custom#option('default', {
+    \ 'split': 'floating',
+    \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
+    \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
+    \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
+    \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
+    \ 'start_filter': v:true,
+    \ 'match_highlight': v:true,
+    \ })
 
 " tab
 noremap <C-T> :tabnew<CR>
@@ -156,20 +160,7 @@ noremap <C-D> :Gdiff<CR>
 noremap <C-B> :Gblame<CR>
 noremap <C-S> :Gstatus<CR>
 
-" deoplete settings
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('smart_case', v:true)
-let g:deoplete#sources#syntax#min_key_word_length = 3
-let g:deoplete#enable_cursor_hold_i = 1
-let g:deoplete#cursor_hold_i_time = 300
-let g:deoplete#lock_buffer_name_pattern = '\*ku\*'
-
-" ale setting
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
-
 " airline setting
-let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'jellybeans'
 
@@ -182,10 +173,47 @@ xmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
 
-let python_highlight_all = 1
+" coc setting
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+    " Recently vim can merge signcolumn and number column into one
+    set signcolumn=number
+else
+    set signcolumn=yes
+endif
+set updatetime=300
 
-" typescript
-let g:tsuquyomi_disable_quickfix = 1
+inoremap <silent><expr> <cr> pumvisible()
+    \ ? coc#_select_confirm()
+    \ : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+endfunction
+
+let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-css',
+    \ 'coc-pyright',
+    \ 'coc-tsserver',
+    \ 'coc-clangd',
+    \ 'coc-cmake',
+    \ 'coc-eslint',
+    \ 'coc-texlab',
+    \ ]
+
+" Python
+let python_highlight_all = 1
 
 " Vue
 let g:vue_disable_pre_processors=1

@@ -1,10 +1,20 @@
 ./install_for_common.sh
 
+# setup homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install curl wget tmux tig tmux pyenv pyenv-virtualenv the_silver_searcher
+brew install \
+    curl \
+    wget \
+    tmux \
+    tig \
+    tmux \
+    pyenv \
+    pyenv-virtualenv \
+    nodenv \
+    the_silver_searcher \
+    neovim
 brew install vim --with-lua
-brew install neovim
 
 echo "alias ls='ls -G'" >> ~/.bashrc
 
