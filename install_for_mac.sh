@@ -13,10 +13,13 @@ brew install \
     pyenv-virtualenv \
     nodenv \
     the_silver_searcher \
-    neovim
+    neovim \
+    llvm
 brew install vim --with-lua
 
 echo "alias ls='ls -G'" >> ~/.bashrc
+# for clangd
+echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> ~/.bashrc
 
 echo "if [ -f ~/.bashrc ]; then" >> ~/.bash_profile
 echo ". ~/.bashrc" >> ~/.bash_profile

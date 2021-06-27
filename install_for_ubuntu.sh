@@ -7,7 +7,8 @@ sudo apt-get install \
     tig \
     tmux \
     neovim \
-    silversearcher-ag
+    silversearcher-ag \
+    clangd-9
 
 # setup pyenv
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
