@@ -223,6 +223,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:tex_conceal=''
 let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
+let g:vimtex_syntax_conceal_default = 0
 
 " memo setting
 let g:memolist_memo_suffix = "md"
