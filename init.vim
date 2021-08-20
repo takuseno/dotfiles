@@ -36,7 +36,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('pangloss/vim-javascript')
     call dein#add('MaxMEllon/vim-jsx-pretty')
     call dein#add('tshirtman/vim-cython')
-    call dein#add('neoclide/coc.nvim')
+    call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release'})
 
     call dein#end()
     call dein#save_state()
