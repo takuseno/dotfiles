@@ -2,7 +2,7 @@ source ~/.git-prompt.sh
 source ~/.git-completion.bash
 
 GIT_PS1_SHOWDIRTYSTATE=true
-PS1='\[\033[32m\]\h@\u: \[\033[1;36m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n\$ '
+PS1='\[\033[32m\]\u@\h: \[\033[1;36m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\n\$ '
 export PS1=$PS1
 
 export PYENV_ROOT=$HOME/.pyenv
