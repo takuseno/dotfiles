@@ -1,17 +1,14 @@
-# MacOS
-if type brew &>/dev/null; then
-  # zsh-completions
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+# zsh-completions
+FPATH=~/.zsh/zsh-completions/src:$FPATH
 
-  # zsh-autosuggestions
-  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-  # zsh-syntax-highlighting
-  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# zsh-syntax-highlighting
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-  autoload -Uz compinit
-  compinit
-fi
+autoload -Uz compinit
+compinit
 
 # git prompt
 source ~/.git-prompt.sh
