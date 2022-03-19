@@ -10,6 +10,9 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 autoload -Uz compinit
 compinit
 
+# disable auto trailing slash removal
+setopt no_auto_remove_slash
+
 # git prompt
 source ~/.git-prompt.sh
 
