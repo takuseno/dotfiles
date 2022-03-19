@@ -13,6 +13,13 @@ compinit
 # disable auto trailing slash removal
 setopt no_auto_remove_slash
 
+# setup history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt share_history
+setopt hist_ignore_dups
+
 # git prompt
 source ~/.git-prompt.sh
 
