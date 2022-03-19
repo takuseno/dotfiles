@@ -14,7 +14,10 @@ brew install \
     nodenv \
     the_silver_searcher \
     neovim \
-    llvm
+    llvm \
+    zsh-completions \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting
 brew install vim --with-lua
 
 echo "alias ls='ls -G'" >> ~/.bashrc
