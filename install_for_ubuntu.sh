@@ -8,7 +8,8 @@ sudo apt-get install \
     tmux \
     neovim \
     silversearcher-ag \
-    clangd-9
+    clangd-9 \
+    peco
 
 # setup pyenv
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
