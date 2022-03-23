@@ -11,6 +11,12 @@ sudo apt-get install \
     clangd-9 \
     peco
 
+# install lf
+wget https://github.com/gokcehan/lf/releases/download/r26/lf-linux-amd64.tar.gz
+tar xvf lf-linux-amd64.tar.gz
+sudo mv lf /usr/local/bin/lf
+rm lf-linux-amd64.tar.gz
+
 # setup pyenv
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv

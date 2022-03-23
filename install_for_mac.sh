@@ -15,7 +15,8 @@ brew install \
     the_silver_searcher \
     neovim \
     llvm \
-    peco
+    peco \
+    lf
 brew install vim --with-lua
 
 echo "alias ls='ls -G'" >> ~/.bashrc
