@@ -38,6 +38,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('tshirtman/vim-cython')
     call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release'})
     call dein#add('rust-lang/rust.vim')
+    call dein#add('tomlion/vim-solidity')
 
     call dein#end()
     call dein#save_state()
@@ -212,6 +213,7 @@ let g:coc_global_extensions = [
     \ 'coc-eslint',
     \ 'coc-texlab',
     \ 'coc-rls',
+    \ 'coc-solidity',
     \ ]
 
 " Python
