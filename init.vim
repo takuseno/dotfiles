@@ -39,6 +39,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release'})
     call dein#add('rust-lang/rust.vim')
     call dein#add('tomlion/vim-solidity')
+    call dein#add('peitalin/vim-jsx-typescript')
 
     call dein#end()
     call dein#save_state()
@@ -49,8 +50,9 @@ if dein#check_install()
 endif
 
 " autocmds
-autocmd BufNewFile,BufRead *.{ts,tsx} set filetype=typescript
+autocmd BufNewFile,BufRead *.ts set filetype=typescript
 autocmd BufRead,BufNewFile *.es6 set filetype=javascript
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
