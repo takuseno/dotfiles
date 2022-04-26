@@ -40,6 +40,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('rust-lang/rust.vim')
     call dein#add('tomlion/vim-solidity')
     call dein#add('peitalin/vim-jsx-typescript')
+    call dein#add('xiyaowong/nvim-transparent')
 
     call dein#end()
     call dein#save_state()
@@ -92,6 +93,9 @@ hi clear CursorLine
 " fill columns after 80 with red
 execute "set colorcolumn=" . join(range(81, 81), ',')
 highlight ColorColumn ctermbg=52 guibg=#2c2d27
+
+" transparent background
+let g:transparent_enabled = v:true
 
 " close brackets and quotes
 inoremap { {}<LEFT>
