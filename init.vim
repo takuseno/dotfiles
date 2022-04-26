@@ -104,6 +104,9 @@ inoremap ( ()<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 
+" terminal mode setting
+tnoremap <Esc> <C-\><C-n>
+
 " assign esc to Ctrl-C
 inoremap <C-c> <Esc>
 
