@@ -3,13 +3,20 @@
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install \
+    curl \
+    wget \
     vim-gnome \
     tig \
     tmux \
     neovim \
     silversearcher-ag \
     clangd-9 \
-    peco
+    peco \
+    ranger \
+    ffmpegthumbnailer \
+    highlight \
+    w3m \
+    mediainfo
 
 # install lf
 wget https://github.com/gokcehan/lf/releases/download/r26/lf-linux-amd64.tar.gz
