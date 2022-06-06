@@ -37,7 +37,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('rust-lang/rust.vim')
     call dein#add('tomlion/vim-solidity')
     call dein#add('xiyaowong/nvim-transparent')
-    call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0 })
+    call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0, 'do': ':TSUpdate' })
 
     call dein#end()
     call dein#save_state()
