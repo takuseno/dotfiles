@@ -12,9 +12,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('scrooloose/nerdtree')
     call dein#add('airblade/vim-gitgutter')
     call dein#add('editorconfig/editorconfig-vim')
-    call dein#add('leafgarland/typescript-vim')
     call dein#add('derekwyatt/vim-scala')
-    call dein#add('kchmck/vim-coffee-script')
     call dein#add('othree/yajs.vim')
     call dein#add('fatih/vim-go')
     call dein#add('vim-airline/vim-airline')
@@ -28,7 +26,6 @@ if dein#load_state('~/.cache/dein')
     call dein#add('digitaltoad/vim-pug')
     call dein#add('simeji/winresizer')
     call dein#add('nanotech/jellybeans.vim')
-    call dein#add('hdima/python-syntax')
     call dein#add('glidenote/memolist.vim')
     call dein#add('itchyny/vim-cursorword')
     call dein#add('elzr/vim-json')
@@ -39,8 +36,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release'})
     call dein#add('rust-lang/rust.vim')
     call dein#add('tomlion/vim-solidity')
-    call dein#add('peitalin/vim-jsx-typescript')
     call dein#add('xiyaowong/nvim-transparent')
+    call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0 })
 
     call dein#end()
     call dein#save_state()
@@ -51,17 +48,12 @@ if dein#check_install()
 endif
 
 " autocmds
-autocmd BufNewFile,BufRead *.ts set filetype=typescript
-autocmd BufRead,BufNewFile *.es6 set filetype=javascript
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType vue syntax sync fromstart
-autocmd FileType markdown let g:indentLine_enabled=0
 filetype plugin on
 
 " base settings
@@ -168,8 +160,8 @@ noremap <C-N> :tabNext<CR>
 
 " Git
 noremap <C-D> :Gdiff<CR>
-noremap <C-B> :Gblame<CR>
-noremap <C-S> :Gstatus<CR>
+noremap <C-B> :Git blame<CR>
+noremap <C-S> :Git status<CR>
 
 " airline setting
 let g:airline#extensions#tabline#enabled = 1
@@ -224,6 +216,16 @@ let g:coc_global_extensions = [
     \ 'coc-rls',
     \ 'coc-solidity',
     \ ]
+
+" treesitter setting
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    ensure_installed = "all"
+  }
+}
+EOF
 
 " Python
 let python_highlight_all = 1
