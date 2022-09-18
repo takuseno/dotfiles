@@ -13,6 +13,9 @@ compinit
 # disable auto trailing slash removal
 setopt no_auto_remove_slash
 
+# disable wildcard match
+setopt nonomatch
+
 # setup history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
