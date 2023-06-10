@@ -1,11 +1,23 @@
 if &compatible
-	set nocompatible
+     set nocompatible
 endif
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
+let $CACHE = expand('~/.cache')
+if !isdirectory($CACHE)
+  call mkdir($CACHE, 'p')
+endif
+if &runtimepath !~# '/dein.vim'
+  let s:dein_dir = fnamemodify('dein.vim', ':p')
+  if !isdirectory(s:dein_dir)
+    let s:dein_dir = $CACHE . '/dein/repos/github.com/Shougo/dein.vim'
+    if !isdirectory(s:dein_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
+    endif
+  endif
+  execute 'set runtimepath^=' . substitute(
+        \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
+endif
 if dein#load_state('~/.cache/dein')
     call dein#begin('~/.cache/dein')
-
     call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
     call dein#add('tpope/vim-fugitive')
     call dein#add('Shougo/denite.nvim')
@@ -34,19 +46,16 @@ if dein#load_state('~/.cache/dein')
     call dein#add('MaxMEllon/vim-jsx-pretty')
     call dein#add('tshirtman/vim-cython')
     call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release'})
-    call dein#add('rust-lang/rust.vim')
+    ""call dein#add('rust-lang/rust.vim')
     call dein#add('tomlion/vim-solidity')
-    call dein#add('xiyaowong/nvim-transparent')
+    call dein#add('xiyaowong/transparent.nvim', {'rev': '4c3c392f285378e606d154bee393b6b3dd18059c'})
     call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0, 'do': ':TSUpdate' })
-
     call dein#end()
     call dein#save_state()
 endif
-
 if dein#check_install()
     call dein#install()
 endif
-
 " autocmds
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
@@ -55,7 +64,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType vue syntax sync fromstart
 filetype plugin on
-
 " base settings
 set nu
 syntax on
@@ -81,27 +89,21 @@ set inccommand=split
 set nobackup
 set nowritebackup
 hi clear CursorLine
-
 " fill columns after 80 with red
-execute "set colorcolumn=" . join(range(81, 81), ',')
+execute "set colorcolumn=" . join(range(80, 80), ',')
 highlight ColorColumn ctermbg=52 guibg=#2c2d27
-
 " transparent background
 let g:transparent_enabled = v:true
-
 " close brackets and quotes
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
-
 " terminal mode setting
 tnoremap <Esc> <C-\><C-n>
-
 " assign esc to Ctrl-C
 inoremap <C-c> <Esc>
-
 " denite settings
 noremap <C-P> :<C-u>Denite file/rec<CR>
 noremap <C-G> :<C-u>Denite grep<CR>
@@ -153,29 +155,23 @@ call denite#custom#option('default', {
     \ 'start_filter': v:true,
     \ 'match_highlight': v:true,
     \ })
-
 " tab
 noremap <C-T> :tabnew<CR>
 noremap <C-N> :tabNext<CR>
-
 " Git
 noremap <C-D> :Gdiff<CR>
 noremap <C-B> :Git blame<CR>
 noremap <C-S> :Git status<CR>
-
 " airline setting
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'jellybeans'
-
 " NERDTree setting
 nmap <C-f> :NERDTree<CR>
-
 " mark setting
 nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
-
 " coc setting
 if has("nvim-0.5.0") || has("patch-8.1.1564")
     " Recently vim can merge signcolumn and number column into one
@@ -184,7 +180,6 @@ else
     set signcolumn=yes
 endif
 set updatetime=300
-
 inoremap <silent><expr> <cr> pumvisible()
     \ ? coc#_select_confirm()
     \ : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -192,7 +187,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
@@ -203,7 +197,6 @@ function! s:show_documentation()
         execute '!' . &keywordprg . " " . expand('<cword>')
     endif
 endfunction
-
 let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-css',
@@ -216,7 +209,6 @@ let g:coc_global_extensions = [
     \ 'coc-rls',
     \ 'coc-solidity',
     \ ]
-
 " treesitter setting
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -226,23 +218,18 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 EOF
-
 " Python
 let python_highlight_all = 1
-
 " Vue
 let g:vue_disable_pre_processors=1
-
 " disable conceals
 let g:vim_markdown_folding_disabled = 1
 let g:tex_conceal=''
 let g:vim_json_syntax_conceal = 0
 let g:vim_markdown_conceal = 0
 let g:vimtex_syntax_conceal_default = 0
-
 " memo setting
 let g:memolist_memo_suffix = "md"
-
 " Go settings
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1

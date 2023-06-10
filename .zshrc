@@ -61,6 +61,7 @@ bindkey -s '^o' 'lfcd\n'
 # setup virtualenvs
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
+export PATH="$HOME/.nodenv/bin:$PATH
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"

@@ -1,11 +1,10 @@
 ./install_for_common.sh
 
-sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get install \
+    software-properties-common \
     curl \
     wget \
-    vim-gnome \
     tig \
     tmux \
     neovim \
@@ -15,8 +14,13 @@ sudo apt-get install \
     ranger \
     ffmpegthumbnailer \
     highlight \
-    w3m \
     mediainfo
+
+# install neovim
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+chmod +x nvim.appimage
+sudo mkdir -p /usr/local/bin
+sudo mv nvim.appimage /usr/local/bin/nvim
 
 # install lf
 wget https://github.com/gokcehan/lf/releases/download/r26/lf-linux-amd64.tar.gz
@@ -30,7 +34,6 @@ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-vi
 
 # setup nodenv
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
-echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.bashrc
 # enable nodenv in this process
 export PATH="$HOME/.nodenv/bin:$PATH"
 mkdir -p "$(nodenv root)"/plugins
