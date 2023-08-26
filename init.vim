@@ -31,7 +31,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('vim-airline/vim-airline-themes')
     call dein#add('godlygeek/tabular')
     call dein#add('plasticboy/vim-markdown')
-    call dein#add('Yggdroot/indentLine')
+    call dein#add('lukas-reineke/indent-blankline.nvim')
     call dein#add('tacroe/unite-mark')
     call dein#add('Xuyuanp/nerdtree-git-plugin')
     call dein#add('t9md/vim-quickhl')
@@ -237,3 +237,8 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+" indent blackline settings
+let g:indent_blankline_space_char_blankline = " "
+let g:indent_blankline_show_current_context = 1
+let g:indent_blankline_show_current_context_start = 1
