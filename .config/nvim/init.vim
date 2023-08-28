@@ -14,5 +14,7 @@ lua require("plugin-indent-blankline")
 
 lua require("plugin-gitsigns")
 
+lua require("plugin-illuminate")
+
 " memo setting
 let g:memolist_memo_suffix = "md"

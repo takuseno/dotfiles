@@ -14,6 +14,7 @@ return require("packer").startup(function(use)
     use 'simeji/winresizer'
     use 'nanotech/jellybeans.vim'
     use 'glidenote/memolist.vim'
+    use 'RRethy/vim-illuminate'
     use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
     use { 'nvim-treesitter/nvim-treesitter', tag = 'v0.9.0', run = ':TSUpdate' }
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = { {'nvim-lua/plenary.nvim' } } }

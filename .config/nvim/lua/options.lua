@@ -21,6 +21,7 @@ vim.opt.writebackup = false
 vim.opt.syntax = 'on'
 vim.opt.filetype = 'plugin', 'indent', 'on'
 vim.opt.signcolumn = 'yes'
+vim.opt.termguicolors = true
 
 vim.cmd[[colorscheme jellybeans]]
 

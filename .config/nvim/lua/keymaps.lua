@@ -33,3 +33,9 @@ vim.api.nvim_set_keymap('n', '<Space>m', '<Plug>(quickhl-manual-this)', { norema
 vim.api.nvim_set_keymap('x', '<Space>m', '<Plug>(quickhl-manual-this)', { noremap = false })
 vim.api.nvim_set_keymap('n', '<Space>M', '<Plug>(quickhl-manual-reset)', { noremap = false })
 vim.api.nvim_set_keymap('x', '<Space>M', '<Plug>(quickhl-manual-reset)', { noremap = false })
+
+-- LSP
+vim.keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
+vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
