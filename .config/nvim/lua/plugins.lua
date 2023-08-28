@@ -10,7 +10,6 @@ return require("packer").startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'editorconfig/editorconfig-vim'
     use 'lukas-reineke/indent-blankline.nvim'
-    use 'itchyny/vim-cursorword'
     use 't9md/vim-quickhl'
     use 'simeji/winresizer'
     use 'nanotech/jellybeans.vim'

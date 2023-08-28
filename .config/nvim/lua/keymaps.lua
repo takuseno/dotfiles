@@ -30,4 +30,6 @@ vim.api.nvim_set_keymap('n', '<C-f>', ':NERDTreeTabsToggle<CR>', { noremap = tru
 
 -- quickhl
 vim.api.nvim_set_keymap('n', '<Space>m', '<Plug>(quickhl-manual-this)', { noremap = false })
+vim.api.nvim_set_keymap('x', '<Space>m', '<Plug>(quickhl-manual-this)', { noremap = false })
 vim.api.nvim_set_keymap('n', '<Space>M', '<Plug>(quickhl-manual-reset)', { noremap = false })
+vim.api.nvim_set_keymap('x', '<Space>M', '<Plug>(quickhl-manual-reset)', { noremap = false })
