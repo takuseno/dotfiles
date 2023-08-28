@@ -9,6 +9,7 @@ sudo apt-get install \
     tmux \
     neovim \
     silversearcher-ag \
+    ripgrep \
     clangd-9 \
     peco \
     ranger \
