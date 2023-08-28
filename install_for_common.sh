@@ -14,5 +14,5 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-# .config settings (e.g. neovim)
+# .config settings (e.g. neovim, kitty)
 cp -r .config ~/.config
