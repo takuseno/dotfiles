@@ -15,6 +15,7 @@ return require("packer").startup(function(use)
     use 'nanotech/jellybeans.vim'
     use 'glidenote/memolist.vim'
     use 'RRethy/vim-illuminate'
+    use 'nvim-tree/nvim-web-devicons'
     use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
     use { 'nvim-treesitter/nvim-treesitter', tag = 'v0.9.0', run = ':TSUpdate' }
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = { {'nvim-lua/plenary.nvim' } } }
@@ -27,4 +28,5 @@ return require("packer").startup(function(use)
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-cmdline"
+    use "ray-x/lsp_signature.nvim"
 end)

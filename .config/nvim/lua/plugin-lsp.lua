@@ -32,6 +32,9 @@ require('mason-lspconfig').setup_handlers({ function(server)
   require("lspconfig").pyright.setup{
     before_init = function(_, config)
       config.settings.python.pythonPath = get_python_path(config.root_dir)
+      config.settings.python.analysis.autoSearchPaths = true
+      config.settings.python.analysis.useLibraryCodeForTypes = true
+      config.settings.python.analysis.diagnosticMode = 'openFilesOnly'
     end
   }
 end })
@@ -53,6 +56,7 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
+    { name = "nvim_lsp_signature_help" },
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -64,4 +68,8 @@ cmp.setup({
   experimental = {
     ghost_text = true,
   },
+})
+
+require("lsp_signature").setup({
+  hint_enable = false,
 })
