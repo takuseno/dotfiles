@@ -4,9 +4,6 @@ return require("packer").startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use 'tpope/vim-fugitive'
-    use 'scrooloose/nerdtree'
-    use 'Xuyuanp/nerdtree-git-plugin'
-    use 'jistr/vim-nerdtree-tabs'
     use 'lewis6991/gitsigns.nvim'
     use 'editorconfig/editorconfig-vim'
     use 'lukas-reineke/indent-blankline.nvim'
@@ -29,4 +26,5 @@ return require("packer").startup(function(use)
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-cmdline"
     use "ray-x/lsp_signature.nvim"
+    use "nvim-tree/nvim-tree.lua"
 end)

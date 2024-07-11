@@ -19,14 +19,16 @@ vim.api.nvim_set_keymap('n', '<C-N>', ':tabNext<CR>', { noremap = true })
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-P>', builtin.find_files, {})
 vim.keymap.set('n', '<C-G>', builtin.live_grep, {})
+vim.keymap.set('n', '<C-L>', builtin.buffers, {})
 
 -- Git
 vim.api.nvim_set_keymap('n', '<C-D>', ':Gdiff<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-B>', ':Git blame<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-S>', ':Git status<CR>', { noremap = true })
 
--- NERDTree
-vim.api.nvim_set_keymap('n', '<C-f>', ':NERDTreeTabsToggle<CR>', { noremap = true })
+-- nvim-tree
+vim.api.nvim_set_keymap('n', '<C-f>', ':NvimTreeToggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Space>f', ':NvimTreeFindFile<CR>', { noremap = true })
 
 -- quickhl
 vim.api.nvim_set_keymap('n', '<Space>m', '<Plug>(quickhl-manual-this)', { noremap = false })
@@ -39,3 +41,4 @@ vim.keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
 vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
+vim.keymap.set('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')

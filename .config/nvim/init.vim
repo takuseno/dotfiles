@@ -16,5 +16,7 @@ lua require("plugin-gitsigns")
 
 lua require("plugin-illuminate")
 
+lua require("plugin-nvim-tree")
+
 " memo setting
 let g:memolist_memo_suffix = "md"
