@@ -18,7 +18,7 @@ sudo apt-get install \
     mediainfo
 
 # install neovim
-wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+wget https://github.com/neovim/neovim/releases/download/v0.9.2/nvim.appimage
 chmod +x nvim.appimage
 sudo mkdir -p /usr/local/bin
 sudo mv nvim.appimage /usr/local/bin/nvim
