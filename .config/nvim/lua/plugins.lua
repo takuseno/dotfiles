@@ -6,7 +6,6 @@ return require("packer").startup(function(use)
     use 'tpope/vim-fugitive'
     use 'lewis6991/gitsigns.nvim'
     use 'editorconfig/editorconfig-vim'
-    use 'lukas-reineke/indent-blankline.nvim'
     use 't9md/vim-quickhl'
     use 'simeji/winresizer'
     use 'nanotech/jellybeans.vim'
@@ -14,7 +13,7 @@ return require("packer").startup(function(use)
     use 'RRethy/vim-illuminate'
     use 'nvim-tree/nvim-web-devicons'
     use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
-    use { 'nvim-treesitter/nvim-treesitter', tag = 'v0.9.0', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter', tag = 'v0.9.2', run = ':TSUpdate' }
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = { {'nvim-lua/plenary.nvim' } } }
     use 'neovim/nvim-lspconfig'
     use 'williamboman/mason.nvim'
@@ -27,4 +26,5 @@ return require("packer").startup(function(use)
     use "hrsh7th/cmp-cmdline"
     use "ray-x/lsp_signature.nvim"
     use "nvim-tree/nvim-tree.lua"
+    use { "shellRaining/hlchunk.nvim", tag = "v1.1.0" }
 end)
