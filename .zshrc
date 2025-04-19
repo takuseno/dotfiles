@@ -68,3 +68,4 @@ eval "$(pyenv virtualenv-init -)"
 eval "$(nodenv init -)"
 
 alias vim='nvim'
+alias ls='ls --color'
