@@ -15,6 +15,8 @@ sudo apt-get install \
     ranger \
     ffmpegthumbnailer \
     highlight \
+    w3m \
+    w3m-img \
     mediainfo
 
 # install neovim
