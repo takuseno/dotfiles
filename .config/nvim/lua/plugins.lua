@@ -13,9 +13,9 @@ return require("packer").startup(function(use)
     use 'RRethy/vim-illuminate'
     use 'nvim-tree/nvim-web-devicons'
     use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
-    use { 'nvim-treesitter/nvim-treesitter', tag = 'v0.9.2', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter', tag = 'v0.9.3', run = ':TSUpdate' }
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = { {'nvim-lua/plenary.nvim' } } }
-    use { 'neovim/nvim-lspconfig', tag = 'v1.8.0' }
+    use 'neovim/nvim-lspconfig'
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use "hrsh7th/nvim-cmp"
@@ -27,4 +27,7 @@ return require("packer").startup(function(use)
     use "ray-x/lsp_signature.nvim"
     use "nvim-tree/nvim-tree.lua"
     use { "shellRaining/hlchunk.nvim", tag = "v1.1.0" }
+    use "zbirenbaum/copilot.lua"
+    use "zbirenbaum/copilot-cmp"
+    use "CopilotC-Nvim/CopilotChat.nvim"
 end)

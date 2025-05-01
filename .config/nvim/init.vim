@@ -6,6 +6,8 @@ lua require("keymaps")
 
 lua require("plugin-lualine")
 
+lua require("plugin-copilot")
+
 lua require("plugin-lsp")
 
 lua require("plugin-nvim-treesitter")

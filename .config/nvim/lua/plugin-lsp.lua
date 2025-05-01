@@ -47,6 +47,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- 3. completion (hrsh7th/nvim-cmp)
 local cmp = require("cmp")
 cmp.setup({
+  preselect = cmp.PreselectMode.None,
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
@@ -54,6 +55,7 @@ cmp.setup({
   },
   sources = {
     { name = "nvim_lsp" },
+    { name = 'copilot' },
     { name = "buffer" },
     { name = "path" },
     { name = "nvim_lsp_signature_help" },
@@ -63,7 +65,7 @@ cmp.setup({
     ["<C-n>"] = cmp.mapping.select_next_item(),
     ['<C-l>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ["<CR>"] = cmp.mapping.confirm { select = true },
+    ["<CR>"] = cmp.mapping.confirm { select = false },
   }),
   experimental = {
     ghost_text = true,

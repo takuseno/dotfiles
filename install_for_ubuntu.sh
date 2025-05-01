@@ -20,10 +20,10 @@ sudo apt-get install \
     mediainfo
 
 # install neovim
-wget https://github.com/neovim/neovim/releases/download/v0.9.4/nvim.appimage
-chmod +x nvim.appimage
+wget https://github.com/neovim/neovim-releases/releases/download/v0.10.4/nvim-linux-x86_64.appimage
+chmod +x nvim-linux-x86_64.appimage
 sudo mkdir -p /usr/local/bin
-sudo mv nvim.appimage /usr/local/bin/nvim
+sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 
 # install lf
 wget https://github.com/gokcehan/lf/releases/download/r26/lf-linux-amd64.tar.gz
