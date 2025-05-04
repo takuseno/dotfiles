@@ -1,0 +1,137 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+    "disableAnimations": true,
+    "keybindings": 
+    [
+        {
+            "id": null,
+            "keys": "ctrl+c"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": {},
+        "list": 
+        [
+            {
+                "colorScheme": "Jellybeans",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "font": 
+                {
+                    "face": "JetBrainsMono Nerd Font",
+                    "size": 9
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell",
+                "opacity": 90
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": true,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "colorScheme": "Jellybeans",
+                "font": 
+                {
+                    "face": "JetBrainsMono Nerd Font",
+                    "size": 9
+                },
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "opacity": 90,
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc",
+                "useAcrylic": false
+            },
+            {
+                "guid": "{ec712eea-a307-5e2e-bb35-78ca302fa699}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Microsoft.WSL"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#121212",
+            "black": "#929292",
+            "blue": "#97BEDC",
+            "brightBlack": "#BDBDBD",
+            "brightBlue": "#B1D8F6",
+            "brightCyan": "#1AB2A8",
+            "brightGreen": "#BDDEAB",
+            "brightPurple": "#FBDAFF",
+            "brightRed": "#FFA1A1",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFDCA0",
+            "cursorColor": "#FFA560",
+            "cyan": "#00988E",
+            "foreground": "#DEDEDE",
+            "green": "#94B979",
+            "name": "Jellybeans",
+            "purple": "#E1C0FA",
+            "red": "#E27373",
+            "selectionBackground": "#474E91",
+            "white": "#DEDEDE",
+            "yellow": "#FFBA7B"
+        }
+    ],
+    "startOnUserLogin": true,
+    "tabSwitcherMode": "disabled",
+    "themes": [],
+    "useAcrylicInTabRow": true
+}
