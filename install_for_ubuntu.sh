@@ -17,7 +17,10 @@ sudo apt-get install \
     highlight \
     w3m \
     w3m-img \
-    mediainfo
+    mediainfo \
+    i3 \
+    compton \
+    feh
 
 # install neovim
 wget https://github.com/neovim/neovim-releases/releases/download/v0.10.4/nvim-linux-x86_64.appimage
