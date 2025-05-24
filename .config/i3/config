@@ -210,5 +210,9 @@ bar {
 gaps inner 8px
 gaps outer 8px
 
+# show app icon in title bar
+for_window [all] title_window_icon yes
+for_window [all] title_window_icon_padding 1
+
 # add app-specific floating setting
 for_window [class="vlc"] floating enable
