@@ -23,7 +23,8 @@ sudo apt-get install \
     feh \
     rofi \
     xclip \
-    maim
+    maim \
+    xss-lock
 
 # install neovim
 wget https://github.com/neovim/neovim-releases/releases/download/v0.10.4/nvim-linux-x86_64.appimage
