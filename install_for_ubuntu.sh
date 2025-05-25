@@ -24,7 +24,8 @@ sudo apt-get install \
     rofi \
     xclip \
     maim \
-    xss-lock
+    xss-lock \
+    xautolock
 
 # install kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
