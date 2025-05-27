@@ -31,7 +31,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -c 000000
 bindsym Control+$mod+l exec "i3lock -c 000000"
 # set auto lock screen
-exec xautolock -detectsleep -time 3 -locker "i3lock -c 000000"
+exec xautolock -detectsleep -time 10 -locker "i3lock -c 000000"
 # disable screen saver
 exec --no-startup-id xset s off
 
@@ -111,7 +111,7 @@ focus_follows_mouse no
 #bindsym $mod+h split h
 
 # toggle split orientation
-bindsym $mod+v layout toggle split
+bindsym $mod+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
