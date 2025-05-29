@@ -63,7 +63,7 @@ bindsym $mod+Shift+q kill
 exec --no-startup-id "~/.fehbg"
 
 # set transparency
-exec --no-startup-id "compton -b -f"
+exec --no-startup-id "compton -b -f --fade-delta=2"
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
