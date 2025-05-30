@@ -16,8 +16,8 @@ return require("packer").startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', tag = 'v0.9.3', run = ':TSUpdate' }
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.8', requires = { {'nvim-lua/plenary.nvim' } } }
     use 'neovim/nvim-lspconfig'
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
+    use { 'williamboman/mason.nvim', tag = "v1.11.0" }
+    use { 'williamboman/mason-lspconfig.nvim', tag = "v1.32.0" }
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/vim-vsnip"
