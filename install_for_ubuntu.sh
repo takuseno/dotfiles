@@ -5,12 +5,12 @@ sudo apt-get install \
     software-properties-common \
     curl \
     wget \
+    zsh \
     tig \
     tmux \
     neovim \
     silversearcher-ag \
     ripgrep \
-    clangd-9 \
     peco \
     ranger \
     ffmpegthumbnailer \
