@@ -14,8 +14,8 @@ return require("packer").startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
     use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
     use { 'nvim-treesitter/nvim-treesitter', tag = 'v0.9.3', run = ':TSUpdate' }
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.8', requires = { {'nvim-lua/plenary.nvim' } } }
-    use 'neovim/nvim-lspconfig'
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.8', requires = { { 'nvim-lua/plenary.nvim' } } }
+    use { 'neovim/nvim-lspconfig', tag = "v2.2.0" }
     use { 'williamboman/mason.nvim', tag = "v1.11.0" }
     use { 'williamboman/mason-lspconfig.nvim', tag = "v1.32.0" }
     use "hrsh7th/nvim-cmp"
@@ -30,4 +30,5 @@ return require("packer").startup(function(use)
     use "zbirenbaum/copilot.lua"
     use "zbirenbaum/copilot-cmp"
     use "CopilotC-Nvim/CopilotChat.nvim"
+    use { "amitds1997/remote-nvim.nvim", tag = "v0.3.11", requires = { { 'MunifTanjim/nui.nvim' } } }
 end)

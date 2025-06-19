@@ -20,5 +20,7 @@ lua require("plugin-nvim-tree")
 
 lua require("plugin-hlchunk")
 
+lua require("plugin-remote-nvim")
+
 " memo setting
 let g:memolist_memo_suffix = "md"

@@ -25,7 +25,10 @@ sudo apt-get install \
     xclip \
     maim \
     xss-lock \
-    xautolock
+    xautolock \
+    fcitx5 \
+    fcitx5-configtool \
+    fcitx5-mozc
 
 # install kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
