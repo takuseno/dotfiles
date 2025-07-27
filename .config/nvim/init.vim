@@ -22,5 +22,7 @@ lua require("plugin-hlchunk")
 
 lua require("plugin-remote-nvim")
 
+lua require("plugin-neogit")
+
 " memo setting
 let g:memolist_memo_suffix = "md"

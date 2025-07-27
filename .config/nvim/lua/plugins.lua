@@ -5,6 +5,7 @@ return require("packer").startup(function(use)
 
     use 'tpope/vim-fugitive'
     use 'lewis6991/gitsigns.nvim'
+    use 'NeogitOrg/neogit'
     use 'editorconfig/editorconfig-vim'
     use 't9md/vim-quickhl'
     use 'simeji/winresizer'
