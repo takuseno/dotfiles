@@ -26,5 +26,7 @@ lua require("plugin-neogit")
 
 lua require("plugin-numb")
 
+lua require("plugin-no-neck-pain")
+
 " memo setting
 let g:memolist_memo_suffix = "md"

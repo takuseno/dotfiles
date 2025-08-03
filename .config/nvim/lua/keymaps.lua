@@ -45,3 +45,6 @@ vim.keymap.set('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 
 -- Copilot
 vim.api.nvim_set_keymap('n', '<Space>c', ':CopilotChatOpen<CR>', { noremap = true })
+
+-- NoNeckPain
+vim.api.nvim_set_keymap('n', '<Space>n', ':NoNeckPain<CR>', { noremap = true })
