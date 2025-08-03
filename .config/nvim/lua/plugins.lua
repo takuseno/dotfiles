@@ -32,4 +32,5 @@ return require("packer").startup(function(use)
     use "zbirenbaum/copilot-cmp"
     use "CopilotC-Nvim/CopilotChat.nvim"
     use { "amitds1997/remote-nvim.nvim", tag = "v0.3.11", requires = { { 'MunifTanjim/nui.nvim' } } }
+    use "nacro90/numb.nvim"
 end)
